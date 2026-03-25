@@ -8,12 +8,12 @@ public class PlayerMovementScript : MonoBehaviour {
     [SerializeField]
     private float f_horPlayAccel = 5000f;
 
-    private Rigidbody2D OURRigidbody;
+    private Rigidbody2D ourRigidbody;
 
-    // Use this for initialization
+    // Use to initialise rigidbody
     void Start() 
     {
-        OURRigidbody = GetComponent<Rigidbody2D>(); 
+        ourRigidbody = GetComponent<Rigidbody2D>(); 
     }
 
     // Update is called once per frame
@@ -21,7 +21,9 @@ public class PlayerMovementScript : MonoBehaviour {
     {
         if (HorizontalInput != 0.0f) {
             Vector2 ForceToAdd = Vector2.right * HorizontalInput * f_horPlayAccel * Time.deltaTime;
-            OURRigidbody.AddForce(ForceToAdd);
+            ourRigidbody.AddForce(ForceToAdd);
         } 
     }
+
+   
 }   
