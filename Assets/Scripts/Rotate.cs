@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Randomises sprite rotation
 public class Rotate : MonoBehaviour
 {
     [SerializeField]
-    private float maximumSpinSpeed = 200;
+    private float maximumSpinSpeed = 200; // rotate speed
 
-    // Use this for initialization
     void Start()
     {
         GetComponent<Rigidbody2D>().angularVelocity = Random.Range(-maximumSpinSpeed, maximumSpinSpeed);

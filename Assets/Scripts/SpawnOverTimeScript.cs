@@ -1,23 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Handles enemy spawning
 public class SpawnOverTimeScript : MonoBehaviour
 {
-
-    // Object to spawn
     [SerializeField]
-    private GameObject spawnObject;
+    private GameObject spawnObject; // Object to spawn
 
-    // Delay between spawns
     [SerializeField]
-    private float spawnDelay = 2f;
+    private float spawnDelay = 2f;  // Time delay between spawns
 
     private Renderer ourRenderer;
 
-    // Use this for initialization
     void Start()
     {
-
         ourRenderer = GetComponent<Renderer>();
 
         // Stop our Spawner from being visible!
