@@ -4,7 +4,6 @@ using System.Collections;
 public class BulletMoveForward : MonoBehaviour {
 
     private float acceleration = 50f;
-
     private float initialVelocity = 5f;
 
     private Rigidbody2D ourRigidbody;
