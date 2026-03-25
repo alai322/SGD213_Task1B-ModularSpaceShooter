@@ -1,24 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Handles bullets and cooldown
 public class ShootingScript : MonoBehaviour
 {
-
-    [SerializeField]
+    [SerializeField] 
     private GameObject bullet;
-
-    private float lastFiredTime = 0f;
-
-    [SerializeField]
+    
+    [SerializeField] 
     private float fireDelay = 1f;
 
+    private float lastFiredTime = 0f;
     private float bulletOffset = 2f;
 
     void Start()
     {
-        // Do some math to perfectly spawn bullets in front of us
-        bulletOffset = GetComponent<Renderer>().bounds.size.y / 2 // Half of our size
-        + bullet.GetComponent<Renderer>().bounds.size.y / 2; // Plus half of the bullet size
+        // Spawn bullets in front of player
+        bulletOffset = 
+        GetComponent<Renderer>().bounds.size.y / 2 + // Half of our size
+        bullet.GetComponent<Renderer>().bounds.size.y / 2; // Plus half of the bullet size
     }
 
     public void Shoot(float CurrentTime) 
@@ -26,9 +26,7 @@ public class ShootingScript : MonoBehaviour
         if (CurrentTime - lastFiredTime > fireDelay)
         {
             Vector2 spawnPosition = new Vector2(transform.position.x, transform.position.y + bulletOffset);
-
             Instantiate(bullet, spawnPosition, transform.rotation);
-
             lastFiredTime = CurrentTime;
         }
     }
